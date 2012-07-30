@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/lib/bootstrap-responsive.min.css">
+        <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="js/lib/mustache.js"></script>
+        <script type="text/javascript" src="js/weather.js"></script>
+    </head>
+    <body>
+        <script type="x-mustache-template" id="forecast_information_tmpl">
+            <h1>Forecast for {{city}}</h1>
+            <h1><small>{{current_date_time}}</small></h1>
+        </script>
+        <script type="x-mustache-template" id="current_conditions_tmpl">
+            <div class="span12">
+                <div class="span2" style="display: inline-block; vertical-align: top; padding-top: 4px;">
+                    <img src="{{icon}}" class="span12">
+                </div>
+                <div class="span10" style="display: inline-block;">
+                    <div><strong>{{condition}}</strong></div>
+                    <div><strong>{{temp_f}}&deg;F</strong></div>
+                    <div>{{humidity}}</div>
+                    <div>{{wind_condition}}</div>
+                </div>
+            </div>
+        </script>
+        <script type="x-mustache-template" id="forecast_conditions_tmpl">
+            {{#conditions}}
+            <div style="display: inline-block; width: 150px;">
+                <h2>{{day_of_week}}</h2>
+                <img src="{{icon}}" style="display: inline-block; vertical-align: top; padding-top: 4px;">
+                <div style="display: inline-block;">
+                    <div>{{condition}}</div>
+                    <div>High: {{high}}&deg;F</div>
+                    <div>Low: {{low}}&deg;F</div>
+                </div>
+            </div>
+            {{/conditions}}
+        </script>
+        
+        <div class="container" style="padding-top: 15px;">
+            <div id="forecast_information" class="well"></div>
+            <div id="current_conditions" class="row-fluid"></div>
+            <hr>
+            <div id="forecast_conditions" class="row-fluid">
+            </div>
+            <form id="options" class="well form-inline">
+                <label id="options_header">Select City</label>
+                <select id="city_menu" style="width: 150px;"></select>
+            </form>
+        </div>
+
+    </body>
+</html>

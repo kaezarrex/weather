@@ -1,0 +1,34 @@
+{
+	"author": "dhazinski@gmail.com", 
+	"config_version": "2", 
+	"description": "An empty app created by default", 
+	"modules": {
+		"button": {
+			"default_icon": "resources/sun_19.png", 
+			"default_popup": "index.html"
+		}, 
+		"icons": {
+			"android": {
+				"36": "resources/icon36.png", 
+				"48": "resources/icon48.png", 
+				"72": "resources/icon72.png"
+			}
+		}, 
+		"is": true, 
+		"logging": {
+			"level": "INFO"
+		}, 
+		"notification": true, 
+		"prefs": true, 
+		"request": {
+			"permissions": [
+				"http://www.google.com/*"
+			]
+		}, 
+		"tools": true, 
+		"topbar": true
+	}, 
+	"name": "Weather", 
+	"platform_version": "v1.4", 
+	"version": "0.1"
+}
